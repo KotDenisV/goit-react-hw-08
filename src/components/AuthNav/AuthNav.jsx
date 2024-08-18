@@ -6,10 +6,10 @@ const AuthNav = () => {
     <div>      
       <ul className={s.list}>
         <li>
-          <NavLink to='/registration'>Registration</NavLink>
+          <NavLink to='/register'>Register</NavLink>
         </li>
         <li>
-          <NavLink to='/login'>Login</NavLink>
+          <NavLink to='/login'>Log In</NavLink>
         </li>
        </ul>
     </div>
