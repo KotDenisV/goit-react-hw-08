@@ -14,7 +14,7 @@ function ContactForm() {
     number: Yup.string()
       .required('This field is required!')
       .min(3, 'Number must be more than 3 chars!')
-      .matches(/^\d{3}-\d{3}-\d{4}$/, 'Number must be in format 333-333-3333')
+      .matches(/^\d{3}-\d{2}-\d{2}$/, 'Number must be in format 333-333-3333')
     });
 
     const initialValues = {
@@ -42,7 +42,7 @@ function ContactForm() {
                 </label>
                 <label className={s.label}>
                   <span>Number:</span>
-                  <Field className={s.input} name='number' placeholder='111-111-1111' />
+                  <Field className={s.input} name='number' placeholder='111-11-11' />
                   <ErrorMessage name='number' component='span' className={s.error} />
                 </label>    
                 <button type="submit">Add contact</button>

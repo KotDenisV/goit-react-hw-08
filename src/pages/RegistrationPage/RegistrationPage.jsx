@@ -1,46 +1,18 @@
-import { Field, Form, Formik } from "formik";
-import s from './RegistrationPage.module.css';
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { registerThunk } from "../../redux/auth/operations";
+import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import { Navigate } from "react-router-dom";
 
-const RegistrationPage = () => {   
-  const dispath = useDispatch();
-  const initialValues = {
-      name: '',
-      email: '',
-      password: '',
-    };
-    const handleSubmit = (values, options) => {
-      console.log(values);
-      dispath(registerThunk(values));
-      options.resetForm();
-    };
-        
+const RegistrationPage = () => {  
+    const isLoggedIn = useSelector(selectIsLoggedIn);
+    
+  if (isLoggedIn) {
+    return <Navigate to='/' />;
+    }   
     return (
-    <div className={s.formWrapper}>        
-        <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-          <Form className={s.form}>
-            <label className={s.label}>
-              <span>Name:</span>
-              <Field className={s.input} name='name' placeholder='Enter your name' />
-            </label> 
-            <label className={s.label}>
-              <span>Email:</span>
-              <Field className={s.input} name='email' placeholder='Enter your email' />
-            </label>
-            <label className={s.label}>
-              <span>Email:</span>
-              <Field className={s.input} name='password' type='password' placeholder='Enter your password' />
-            </label>
-            <button type="submit">Register</button>
-             
-            <p>
-              You already have account?<Link to='/login' > Sign in</Link>
-            </p>
-          </Form>
-        </Formik>      
-    </div>
+    <>        
+        <RegistrationForm />   
+    </>
     );
 };
 
