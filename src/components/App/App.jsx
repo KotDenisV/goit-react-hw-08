@@ -7,17 +7,19 @@ import LoginPage from '../../pages/LoginPage/LoginPage';
 import RegistrationPage from '../../pages/RegistrationPage/RegistrationPage';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getMeThunk } from '../../redux/auth/operations';
 import { PrivateRoute } from '../../Routes/PrivateRoute';
 import { PublicRoute } from '../../Routes/PublicRoute';
+import { selectIsRefreshing } from '../../redux/auth/selectors';
 
 function App() { 
   const dispath = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing)
   useEffect(() => {
     dispath(getMeThunk());
   }, [dispath]);
-  return (
+  return isRefreshing ? null : (
     <div className={styles.appWrapper}>     
       <Routes>
         <Route path='/' element={<Layout />}>

@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import s from './ContactsPage.module.css';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchContactsThunk } from '../../redux/contacts/operetions';
+import { fetchContactsThunk } from '../../redux/contacts/operations';
 
 const ContactsPage = () => {
     const dispatch = useDispatch();

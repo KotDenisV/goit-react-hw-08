@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addContactThunk, deleteContactThunk, fetchContactsThunk } from "./operetions";
+import { addContactThunk, deleteContactThunk, fetchContactsThunk } from "./operations";
 import { logoutThunk } from '../auth/operations';
 
 
