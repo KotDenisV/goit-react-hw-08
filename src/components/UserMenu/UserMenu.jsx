@@ -9,14 +9,17 @@ const UserMenu = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logoutThunk()).then(() => {
+      navigate('/');
+    });
+  };
   
   return (
     <div className={s.wrapper}>
       <p className={s.user}>Welcome, {user.email}</p>
-      <button className={s.button} onClick={() => dispatch(logoutThunk()).then(() => {
-        navigate('/');
-        })
-      }>
+      <button className={s.button} onClick={handleLogout}>
         Logout
       </button>
     </div>
