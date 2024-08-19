@@ -9,6 +9,7 @@ import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getMeThunk } from '../../redux/auth/operations';
+import { PrivateRoute } from '../../Routes/PrivateRoute';
 
 function App() { 
   const dispath = useDispatch();
@@ -20,7 +21,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path='contacts' element={<ContactsPage />} />
+          <Route path='contacts' element={
+            <PrivateRoute>
+              <ContactsPage />
+            </PrivateRoute>
+            } />
         </Route>  
           <Route path='/login' element={<LoginPage />} />
           <Route path='/register' element={<RegistrationPage />} />          

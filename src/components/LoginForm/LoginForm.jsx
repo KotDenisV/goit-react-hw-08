@@ -31,7 +31,7 @@ const LoginForm = () => {
             <button type="submit">Log In</button>
 
             <p>
-              You don`t have account?<Link to='/register' > Sign up</Link>
+              You don`t have account?<Link className={s.link} to='/register' > Sign up</Link>
             </p>
           </Form>
         </Formik>      

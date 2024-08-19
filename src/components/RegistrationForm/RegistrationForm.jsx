@@ -36,7 +36,7 @@ const RegistrationForm = () => {
             <button type="submit">Register</button>
              
             <p>
-              You already have account?<Link to='/login' > Sign in</Link>
+              You already have account?<Link className={s.link} to='/login' > Sign in</Link>
             </p>
           </Form>
         </Formik>      

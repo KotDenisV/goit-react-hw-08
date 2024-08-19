@@ -35,3 +35,8 @@
   border-radius: 8px;
   width: 20vw;
 }
+
+.link {
+  color: blue;
+  text-decoration: underline;
+}
