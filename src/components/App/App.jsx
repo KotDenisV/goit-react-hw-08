@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import styles from './App.module.css';
-import { fetchContactsThunk } from '../../redux/contacts/operetions';
-import { useDispatch } from 'react-redux';
+// import { fetchContactsThunk } from '../../redux/contacts/operetions';
+// import { useDispatch } from 'react-redux';
 import ContactsPage from '../../pages/ContactsPage/ContactsPage';
 import { Route, Routes } from 'react-router-dom';
 import Layout from '../Layout/Layout';
@@ -11,10 +11,10 @@ import RegistrationPage from '../../pages/RegistrationPage/RegistrationPage';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
 
 function App() {  
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchContactsThunk());
-  }, [dispatch]);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(fetchContactsThunk());
+  // }, [dispatch]);
   
   return (
     <div className={styles.appWrapper}>
