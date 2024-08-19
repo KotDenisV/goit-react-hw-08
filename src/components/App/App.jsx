@@ -6,9 +6,15 @@ import HomePage from '../../pages/HomePage/HomePage';
 import LoginPage from '../../pages/LoginPage/LoginPage';
 import RegistrationPage from '../../pages/RegistrationPage/RegistrationPage';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getMeThunk } from '../../redux/auth/operations';
 
-function App() {  
- 
+function App() { 
+  const dispath = useDispatch();
+  useEffect(() => {
+    dispath(getMeThunk());
+  }, [dispath]);
   return (
     <div className={styles.appWrapper}>     
       <Routes>
