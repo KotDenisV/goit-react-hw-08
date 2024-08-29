@@ -30,7 +30,7 @@ const RegistrationForm = () => {
               <Field className={s.input} name='email' placeholder='Enter your email' />
             </label>
             <label className={s.label}>
-              <span>Email:</span>
+              <span>Password:</span>
               <Field className={s.input} name='password' type='password' placeholder='Enter your password' />
             </label>
             <button type="submit">Register</button>
